@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductColorController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\productSizeController;
 use App\Http\Controllers\SubCategoryController;
 use App\Models\ProductColor;
@@ -27,6 +28,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+Route::resource('products',ProductController::class);
 Route::resource('category',CategoryController::class);
 Route::resource('subcategory',SubCategoryController::class);
 Route::resource('product/size',ProductSizeController::class);

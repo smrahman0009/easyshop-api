@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductColor;
+use App\Models\SubCategory;
+use Faker\Provider\ar_SA\Color;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,9 +16,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return response()->json([
-            "message" => "success"
-        ],201);
+        $subCategories = SubCategory::all();
+        // dd($subCategories);
+        return view('product.index')->with('subCategories',$subCategories);
     }
 
     /**
@@ -25,7 +28,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $subCategories = SubCategory::all();
+        $colors = ProductColor::all();
+        return view('product.create')->with(['subCategories'=>$subCategories,'colors'=>$colors]);
     }
 
     /**

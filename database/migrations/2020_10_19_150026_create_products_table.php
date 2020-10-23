@@ -17,6 +17,13 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
+            $table->text('description');
+            $table->float('discount');
+            $table->integer('quantity');
+            $table->integer('color_id');
+            $table->integer('subcategory_id');
+            $table->integer('size_id');
+            $table->integer('ratting');
             $table->timestamps();
         });
     }

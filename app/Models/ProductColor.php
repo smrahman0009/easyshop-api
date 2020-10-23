@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductColor extends Model
 {
-    protected $fillable = ['name'];
     use HasFactory;
+    protected $fillable = ['name'];
+
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }
