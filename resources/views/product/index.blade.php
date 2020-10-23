@@ -8,7 +8,7 @@
         @include('include.leftmenu')
         <div class="w-3/4 bg-gray-100 h-12 ml-4">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-            <a href="{{route('subcategory.create')}}" style="text-decoration:none">
+            <a href="{{route('products.create')}}" style="text-decoration:none">
                     Create
                 </a>
             </button>

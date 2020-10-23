@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->integer('color_id');
             $table->integer('subcategory_id');
             $table->integer('size_id');
-            $table->integer('ratting');
+            $table->integer('ratting')->nullable();
             $table->timestamps();
         });
     }

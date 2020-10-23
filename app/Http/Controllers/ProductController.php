@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProductColor;
+use App\Models\ProductSize;
 use App\Models\SubCategory;
 use Faker\Provider\ar_SA\Color;
 use Illuminate\Http\Request;
@@ -30,7 +31,8 @@ class ProductController extends Controller
     {
         $subCategories = SubCategory::all();
         $colors = ProductColor::all();
-        return view('product.create')->with(['subCategories'=>$subCategories,'colors'=>$colors]);
+        $sizes = ProductSize::all();
+        return view('product.create')->with(['subCategories'=>$subCategories,'colors'=>$colors,'sizes'=>$sizes]);
     }
 
     /**
@@ -41,7 +43,21 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required',
+            'price'=>'required',
+            'quantity'=>'required',
+            'discount'=>'required',
+            'size_id'=>'required',
+            'color_id'=>'required',
+            'subcategory_id'=>'required',
+            'images'=>'required'
+        ]);
+        $images = array();
+        foreach($request->images as $image){
+            $images[] = $image;
+        }
+        dd($images);
     }
 
     /**
