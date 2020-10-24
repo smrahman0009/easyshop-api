@@ -11,7 +11,7 @@
             @csrf
                 <div class="w-full md:items-center mb-6">
                    <div class="md:w-1/2">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="name">
+                    <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4" for="name">
                       Name
                     </label>
                   </div>
@@ -25,7 +25,7 @@
                     @enderror
                   </div>
                   <div class="md:w-1/2">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="price">
+                    <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4" for="price">
                       Price
                     </label>
                   </div>
@@ -39,7 +39,7 @@
                     @enderror
                   </div>
                   <div class="md:w-1/2">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="discount">
+                    <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4" for="discount">
                       Discount
                     </label>
                   </div>
@@ -53,7 +53,7 @@
                     @enderror
                   </div>
                   <div class="md:w-1/2">
-                    <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="quantity">
+                    <label class="block text-gray-500 font-bold mb-1 md:mb-0 pr-4" for="quantity">
                       Quantity
                     </label>
                   </div>
@@ -71,7 +71,7 @@
                       Color
                     </label>
                     <div class="relative">
-                        <select name="category_id" id="category_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <select name="color_id" id="color_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                             @foreach ($colors as $color)
                                 <option value="{{$color->id}}">{{$color->name}}</option>
                             @endforeach
@@ -101,7 +101,7 @@
                     Subcategory
                   </label>
                   <div class="relative">
-                      <select name="category_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                      <select name="subcategory_id" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                           @foreach ($subCategories as $subCategory)
                               <option value="{{$subCategory->id}}">{{$subCategory->name}}</option>
                           @endforeach
