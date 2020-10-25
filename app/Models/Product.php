@@ -14,18 +14,18 @@ class Product extends Model
     'size_id','ratting'];
 
     public function subCategory(){
-        return $this->hasOne(SubCategory::class);
+        return $this->belongsTo(SubCategory::class,'subcategory_id');
     }
 
     public function productColor(){
-        return $this->hasOne(ProductColor::class);
+        return $this->belongsTo(ProductColor::class,'color_id');
     }
 
     public function productSize(){
-        return $this->hasOne(ProductSize::class);
+        return $this->belongsTo(ProductSize::class,'size_id');
     }
 
     public function productImage(){
-        return $this->belongsTo(ProductImage::class);
+        return $this->hasOne(ProductImage::class);
     }
 }

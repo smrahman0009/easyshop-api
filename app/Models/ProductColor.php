@@ -11,6 +11,6 @@ class ProductColor extends Model
     protected $fillable = ['name'];
 
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->hasOne(Product::class,'color_id');
     }
 }
